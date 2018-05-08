@@ -1,0 +1,28 @@
+public Boolean selectByText( String text ) {
+    WebElement dropDown = driver.findElement( By.xpath( ".//dropdown/path" ) );
+    dropDown.click();
+    List<WebElement> allOptions = dropDown.findElements(By.xpath(".//option"));
+    for ( WebElement we: allOptions) { 
+        dropDown.sendKeys( Keys.DOWN ); //simulate visual movement
+        sleep(250);       
+        if ( we.getText().contains( text ) ) select.selectByVisibleText("Value1");
+    }
+}
+
+
+WebElement table = driver.findElement(By.xpath("your path"));
+List<WebElement> rows = table.findElements(By.tagName("your tagName"));
+java.util.Iterator<WebElement> i = rows.iterator();
+while(i.hasNext()) {
+    WebElement row = i.next();
+    System.out.println(row.getText());
+}
+For dropdown list iterate you can use below code.
+
+List<WebElement> drop = driver.findElements(By.name("customerId"));
+java.util.Iterator<WebElement> i = drop.iterator();
+while(i.hasNext()) {
+    WebElement row = i.next();
+    System.out.println(row.getText());
+}
+
