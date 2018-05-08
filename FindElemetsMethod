@@ -9,6 +9,14 @@ public Boolean selectByText( String text ) {
     }
 }
 
+----
+List<WebElement> objLinks = driver.findElements(By.tagName("a"));
+for(WebElement objCurrentLink : objLinks)
+{
+    String stringLinkText = objCurrentLink.getText();
+    System.ou.println(stringLinkText);
+}   
+----
 
 WebElement table = driver.findElement(By.xpath("your path"));
 List<WebElement> rows = table.findElements(By.tagName("your tagName"));
